@@ -1,18 +1,22 @@
-package Lab2_Part2;
+package CSC305_Lab_2.Lab2_Part2;
 
-public class Award {
-    private String name;
-    private int year;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-    public Award(String name, int year) {
+class Award {
+    private final String name;
+    private final int year;
+
+    @JsonCreator
+    Award(@JsonProperty("name") String name, @JsonProperty("year") int year) {
         this.name = name;
         this.year = year;
     }
 
-    public Award() {
-        this.name = "";
-        this.year = -1;
-    }
+    /*Award(String name, int year) {
+        this.name = name;
+        this.year = year;
+    }*/
 
     public String getName() {
         return name;
@@ -20,14 +24,6 @@ public class Award {
 
     public int getYear() {
         return year;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
     }
 
     @Override

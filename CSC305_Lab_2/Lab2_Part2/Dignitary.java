@@ -1,55 +1,32 @@
-package Lab2_Part2;
+package CSC305_Lab_2.Lab2_Part2;
 
-import java.util.ArrayList;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class Dignitary {
-    private String name;
-    private List<Award> awards;
-    private List<String> knownFor;
+    private final String name;
+    private final List<Award> awards;
+    private final List<String> knownFor;
 
-    public Dignitary(String name) {
+    @JsonCreator
+    private Dignitary(@JsonProperty("name") String name, @JsonProperty("awards") List<Award> awards, @JsonProperty("knownFor") List<String> knownFor) {
         this.name = name;
-        this.awards = new ArrayList<>();
-        this.knownFor = new ArrayList<>();
-    }
-
-    public Dignitary() {
-        this.name = "";
-        this.awards = new ArrayList<>();
-        this.knownFor = new ArrayList<>();
+        this.awards = awards;
+        this.knownFor = knownFor;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public List<Award> getAwards() {
         return awards;
     }
 
-    public void setAwards(List<Award> awards) {
-        this.awards = awards;
-    }
-
     public List<String> getKnownFor() {
         return knownFor;
-    }
-
-    public void setKnownFor(List<String> knownFor) {
-        this.knownFor = knownFor;
-    }
-
-    public void addAward(Award award) {
-        awards.add(award);
-    }
-
-    public void addKnownFor(String area) {
-        knownFor.add(area);
     }
 
     @Override

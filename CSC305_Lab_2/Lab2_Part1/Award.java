@@ -1,10 +1,10 @@
-package Lab2_Part1;
+package CSC305_Lab_2.Lab2_Part1;
 
-public class Award {
+class Award {
     private final String name;
     private final int year;
 
-    public Award(String name, int year) {
+    Award(String name, int year) {
         this.name = name;
         this.year = year;
     }

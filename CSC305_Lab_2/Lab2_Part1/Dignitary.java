@@ -1,17 +1,17 @@
-package Lab2_Part1;
+package CSC305_Lab_2.Lab2_Part1;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Dignitary {
+class Dignitary {
     private final String name;
     private final List<Award> awards;
     private final List<String> knownFor;
 
-    public Dignitary(String name) {
+    Dignitary(String name, ArrayList<Award> award, ArrayList<String> knownFor) {
         this.name = name;
-        this.awards = new ArrayList<>();
-        this.knownFor = new ArrayList<>();
+        this.awards = award;
+        this.knownFor = knownFor;
     }
 
     public String getName() {
@@ -24,14 +24,6 @@ public class Dignitary {
 
     public List<String> getKnownFor() {
         return knownFor;
-    }
-
-    public void addAward(Award award) {
-        awards.add(award);
-    }
-
-    public void addKnownFor(String area) {
-        knownFor.add(area);
     }
 
     @Override
