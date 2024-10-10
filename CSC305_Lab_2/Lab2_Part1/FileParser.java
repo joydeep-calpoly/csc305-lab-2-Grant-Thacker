@@ -39,6 +39,6 @@ public class FileParser {
         catch (Exception e) {
             System.out.println("An error occurred: " + e.getMessage());
         }
-        return null;
+        return new Dignitary("none");
     }
 }
